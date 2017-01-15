@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body class="container" action="" method="post" name="contactForm">
+<form action="#" >
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="mail" class="form-control" id="exampleInputEmail1" placeholder="Emaill" required
+           pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+    <span class="eror">Proper format "name@something.com"</span>
+    <label for="exampleInputPassword1">Message</label>
+    <textarea class="form-control" rows="3" id="exampleInputPassword1" placeholder="Message me" required></textarea>
+    <span class="eror">Proper format "Write me"</span>
+    <button type="submit" class="btn btn-primary btn-lg"> Submit</button>
+</form>
+
+
+
+
+<style>
+    form{
+        margin-top:20px;
+    }
+input{
+    margin:10px;
+    background: white;
+}
+textarea{
+    margin:10px;
+}
+
+button{
+    margin-left:50%;
+}
+
+    #exampleInputEmail1:required, #exampleInputPassword1:required {
+        background: #fff url(images/red_asterisk.png) no-repeat 98% center;
+    }
+    #exampleInputEmail1:focus:invalid, #exampleInputPassword1:focus:invalid{
+        background: #fff url(images/invalid.png) no-repeat 98% center;
+        box-shadow: 0 0 5px #d45252;
+        border:2px solid red;
+        transition: border 1s;
+
+    }
+    #exampleInputEmail1:focus:valid, #exampleInputPassword1:focus:valid{
+        background: #fff url(images/valid.png) no-repeat 98% center;
+        box-shadow: 0 0 5px #5cd053;
+        border:2px solid green;
+        transition: border 1s;
+
+    }
+    .eror{
+        background: red;
+        border-radius: 3px;
+        color: white;
+        margin-left:250px;
+        padding: 1px 6px;
+        position: absolute;
+        display: none;
+    }
+    .eror:before {
+        content: "\25C0";
+        color:red;
+        position: absolute;
+        top:1px;
+        left:-6px;
+    }
+    input:focus  + .eror {
+        display: inline;
+        transition: display 1s;
+    }
+    textarea:focus  + .eror {
+        display: inline;
+    }
+    input:required:valid + .eror {
+        background: green;
+    }
+    textarea:required:valid + .eror {
+        background: green;
+    }
+    input:required:valid + .eror::before {
+        color:green;
+    }
+    textarea:required:valid + .eror::before {
+        color:green;
+    }
+    #exampleInputEmail1:required:valid, #exampleInputPassword1:required:valid{
+        border:2px solid green;
+        background: #fff url(images/valid.png) no-repeat 98% center;
+        box-shadow: 0 0 5px #5cd053;
+    }
+</style>
+
+</body>
+</html>
